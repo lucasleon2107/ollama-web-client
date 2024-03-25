@@ -1,6 +1,6 @@
 # Ollama Web Client
 
-This project is a client for Ollama.
+This project is a client for Ollama built with Vaadin and Kotlin.
 
 ## Prerequisites
 
