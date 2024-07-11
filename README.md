@@ -6,8 +6,7 @@ This project is a client for Ollama built with Vaadin and Kotlin.
 
 Before you begin, ensure you have met the following requirements:
 
-- Java Development Kit (JDK) installed (version 21 or higher)
-- Ollama installed. Download it [here](https://ollama.com/).
+- Docker installed. Download it [here](https://www.docker.com/products/docker-desktop/).
 
 ## Getting Started
 
@@ -25,13 +24,18 @@ To get started with this project, follow these steps:
     cd ollama-web-client
     ```
 
-3. Run the project:
+3. Build and start the services using Docker Compose:
 
     ```bash
-    ./gradlew bootRun
+    docker-compose up -d
     ```
+4. Pull the `tinyllama` model for the `ollama` service:
 
-4. Once the project runs, access it through your web browser at `http://localhost:8080`.
+    ```bash
+    docker-compose exec ollama ollama pull tinyllama
+    ```
+   
+5. Once the project runs, access it through your web browser at [http://localhost:8080](http://localhost:8080).
 
 ## Usage
 
