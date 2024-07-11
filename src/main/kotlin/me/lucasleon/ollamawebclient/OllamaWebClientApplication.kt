@@ -10,11 +10,13 @@ import com.vaadin.flow.server.VaadinServiceInitListener
 import com.vaadin.flow.theme.Theme
 import com.vaadin.flow.theme.lumo.Lumo
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.boot.runApplication
 
 @Push
 @Theme(variant = Lumo.DARK)
 @SpringBootApplication
+@EnableConfigurationProperties
 class OllamaWebClientApplication : AppShellConfigurator
 
 fun main(args: Array<String>) {

@@ -9,15 +9,17 @@ import io.ktor.utils.io.readUTF8Line
 import kotlinx.coroutines.flow.flow
 import kotlinx.serialization.json.Json
 import me.lucasleon.ollamawebclient.commons.RestClient.Companion.restClient
+import me.lucasleon.ollamawebclient.config.OllamaConfigProperties
 import me.lucasleon.ollamawebclient.models.dtos.request.OllamaRequest
 import me.lucasleon.ollamawebclient.models.dtos.response.OllamaResponse
 import org.springframework.stereotype.Component
 
 @Component
 class OllamaRequester(
-    engine: HttpClientEngine
+    engine: HttpClientEngine,
+    ollamaConfigProperties: OllamaConfigProperties
 ) {
-    private val url = "http://localhost:11434/api/generate"
+    private val url = "${ollamaConfigProperties.url}:11434/api/generate"
     private val restClient = restClient(engine)
 
     fun getOllamaResponse(ollamaRequest: OllamaRequest) = flow {
